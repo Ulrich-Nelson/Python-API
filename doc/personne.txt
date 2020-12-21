@@ -1,0 +1,42 @@
+Type personnage - classe:
+    - Guerrier => 1
+    - Voleur => 2
+    - Mage => 3
+
+Caract.:
+    - Attaque (Guerrier > Voleur > Mage) # 1000
+    - Defense (Guerrier > Mage > Voleur)  # 1000
+    - Vitesse (Voleur > Mage > Guerrier)  # 1000
+    - Chance (Voleur > Guerrier > Mage)  # 1000
+    - Mana (Mage > Voleur > Guerrier)  # 1000
+    - Vie (Mage > Guerrier > Voleur)  # 1000
+
+Ethnie:
+    - Guerrier:
+        - Congo *1 => 1
+        - Mongolie *2 => 2
+        - France *3 => 3
+    - Voleur:
+        - USA *1 => 4
+        - Japon *2 => 5
+        - Cote_Ivoire *3 => 6
+    - Mage:
+        - Argentine *1 => 7
+        - Haiti *2 => 8
+        - Angleterre *3 => 9
+
+Sexe:
+    - Homme:
+        - Guerrier
+    - Femme:
+        - Voleur
+    - Trans:
+        - Mage
+
+Niveau:
+    1-15:
+        Guerrier > Voleur > Mage 
+    15-35:
+        Voleur > Mage > Guerrier 
+    35-50:
+        Mage > Guerrier > Voleur
