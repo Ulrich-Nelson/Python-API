@@ -1,0 +1,38 @@
+6 object max
+
+- Attaque:
+    - Epée -> Guerrier
+    - Arc -> Guerrier
+    - Baton -> Mage
+    - Dague -> Voleur
+
+- Defense:
+    - Casque -> Guerrier
+    - Bouclier -> Guerrier
+    - Fumigene -> Voleur
+    - Bague -> Mage
+
+- Vitesse:
+    - AirJordan -> Voleur
+    - Moto -> Mage
+    - Batmobile -> Voleur
+    - Cheval -> Guerrier
+
+- Chance:
+    - Trefle -> Voleur
+    - Fer -> Guerrier
+    - As -> Mage
+    - Lapin -> Voleur
+
+- Mana
+    - Grigri -> Voleur
+    - Talisman -> Guerrier
+    - Baguette -> Mage
+    - Grimoire -> Mage
+
+- Vie
+    - Breuvage -> Guerrier
+    - Potion -> Mage
+    - Défribrillateur -> Voleur
+    - Senzu -> Mage
+

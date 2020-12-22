@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import model_rpg.Item
 from math import floor
 from random import randint
 from utils import TYPE_ETHNIE
@@ -22,6 +23,16 @@ class Personnage():
         self.mana = 0
         self.vie = 10
         self.exp = 0
+        self.level = 1
+        self.stock = [Item(1, type_personnage)]
+        self.stuff = {
+            "Attaque":-1,
+            "Defense":-1,
+            "Vitesse":-1,
+            "Mana":-1,
+            "Chance":-1,
+            "Vie":-1,
+        }
         self.init()
 
     def init(self):
@@ -143,9 +154,27 @@ class Personnage():
         self.vie = floor(self.vie)
 
 
+    def liste_inventaire_du_stock(self):
+        print('*********************** Inventaire ***********************')
+        for item in self.stock:
+            "Key:"+str(self.objet["key"])+"\n"+"Name:"+self.name+"\n"+"Type items:"+str(self.objet["catg"])+"\n"+"Attaque:"+str(self.attaque)+"\n"+"Defense:"+str(self.defense)+"\n"+"Vitesse:"+str(self.vitesse)+"\n"+"Chance:"+str(self.chance)+"\n"+"Mana:"+str(self.mana)+"\n"+"Vie:"+str(self.vie)+"\n"
+            print("Key:"+str(item.objet["key"])+"\n")
+            print("Name:"+item.name+"\n")
+            print("Type items:"+str(item.objet["catg"])+"\n")
+            print('-------------- Caract. --------------')
+            print("Attaque:"+str(item.attaque)+"\n")
+            print("Defense:"+str(item.defense)+"\n")
+            print("Vitesse:"+str(item.vitesse)+"\n")
+            print("Chance:"+str(item.chance)+"\n")
+            print("Mana:"+str(item.mana)+"\n")
+            print("Vie:"+str(item.vie)+"\n")
+        print('*********************** END ***********************')
+
+
     def __str__(self):
-        return "attaque: " + str(self.attaque)+"\n"+ "defense: " + str(self.defense)+"\n"+ "vitesse: " + str(self.vitesse)+"\n"+ "chance: " + str(self.chance)+"\n"+ "mana: " + str(self.mana)+"\n"+ "vie: " + str(self.vie)+"\n"
+        return "attaque: " + str(self.attaque)+"\n"+ "defense: " + str(self.defense)+"\n"+ "vitesse: " + str(self.vitesse)+"\n"+ "chance: " + str(self.chance)+"\n"+ "mana: " + str(self.mana)+"\n"+ "vie: " + str(self.vie)+"\n"+ "stock: " + str(len(self.stock))+"\n"
 
 if __name__ == "__main__":
     test = Personnage('Mike', 1, 'France', 1)
     print(test)
+    test.liste_inventaire_du_stock()
