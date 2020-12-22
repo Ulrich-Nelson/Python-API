@@ -12,4 +12,4 @@ Type de mob:
         - Dragon -> Emeraude du chaos
         - Anaconda -> Tri-Force
     - Big Boss:(1/100)
-        - Mike Roi # 1000
+        - Mike Nelson # 1000

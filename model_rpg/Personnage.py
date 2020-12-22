@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import model_rpg.Item
 from math import floor
 from random import randint
 from utils import TYPE_ETHNIE
@@ -24,7 +23,7 @@ class Personnage():
         self.vie = 10
         self.exp = 0
         self.level = 1
-        self.stock = [Item(1, type_personnage)]
+        self.stock = []
         self.stuff = {
             "Attaque":-1,
             "Defense":-1,
@@ -48,12 +47,12 @@ class Personnage():
         """ Stats type personnage """
 
         if(self.type_personnage == 1): # - Guerrier
-            self.attaque += randint(10, 20)
-            self.defense += randint(10, 20)
-            self.vitesse += randint(1, 10)
-            self.chance += randint(5, 15)
-            self.mana += randint(1, 10)
-            self.vie += randint(5, 15)
+            self.attaque += randint(15, 20)
+            self.defense += randint(15, 20)
+            self.vitesse += randint(5, 10)
+            self.chance += randint(10, 15)
+            self.mana += randint(5, 10)
+            self.vie += randint(10, 15)
 
             """ Stats type ethnie """
             if( 1 >= TYPE_ETHNIE.get(self.ethnie, 3) <= 3): # "Congo": 1, "Mongolie": 2, "France": 3
@@ -84,12 +83,12 @@ class Personnage():
 
 
         elif(self.type_personnage == 2): # - Voleur
-            self.attaque += randint(5, 15)
-            self.defense += randint(1, 10)
-            self.vitesse += randint(10, 20)
-            self.chance += randint(10, 20)
-            self.mana += randint(5, 15)
-            self.vie += randint(1, 10)
+            self.attaque += randint(10, 15)
+            self.defense += randint(5, 10)
+            self.vitesse += randint(15, 20)
+            self.chance += randint(15, 20)
+            self.mana += randint(10, 15)
+            self.vie += randint(5, 10)
 
             """ Stats type ethnie """
             if( 4 >= TYPE_ETHNIE.get(self.ethnie, 3) <= 6): # "USA": 4, "Japon": 5, "Cote_Ivoire": 6
@@ -116,12 +115,12 @@ class Personnage():
 
 
         elif(self.type_personnage == 3):
-            self.attaque += randint(1, 10)
-            self.defense += randint(5, 15)
-            self.vitesse += randint(5, 15)
-            self.chance += randint(1, 10)
-            self.mana += randint(10, 20)
-            self.vie += randint(10, 20)
+            self.attaque += randint(5, 10)
+            self.defense += randint(10, 15)
+            self.vitesse += randint(10, 15)
+            self.chance += randint(5, 10)
+            self.mana += randint(15, 20)
+            self.vie += randint(15, 20)
 
             """ Stats type ethnie """
             if( 7 >= TYPE_ETHNIE.get(self.ethnie, 3) <= 9): # "Argentine": 7, "Haiti": 8, "Angleterre": 9
@@ -154,10 +153,12 @@ class Personnage():
         self.vie = floor(self.vie)
 
 
+    def add_item_to_stock(self, item):
+        self.stock.append(item)
+
     def liste_inventaire_du_stock(self):
         print('*********************** Inventaire ***********************')
         for item in self.stock:
-            "Key:"+str(self.objet["key"])+"\n"+"Name:"+self.name+"\n"+"Type items:"+str(self.objet["catg"])+"\n"+"Attaque:"+str(self.attaque)+"\n"+"Defense:"+str(self.defense)+"\n"+"Vitesse:"+str(self.vitesse)+"\n"+"Chance:"+str(self.chance)+"\n"+"Mana:"+str(self.mana)+"\n"+"Vie:"+str(self.vie)+"\n"
             print("Key:"+str(item.objet["key"])+"\n")
             print("Name:"+item.name+"\n")
             print("Type items:"+str(item.objet["catg"])+"\n")
@@ -172,9 +173,10 @@ class Personnage():
 
 
     def __str__(self):
+        self.liste_inventaire_du_stock()
         return "attaque: " + str(self.attaque)+"\n"+ "defense: " + str(self.defense)+"\n"+ "vitesse: " + str(self.vitesse)+"\n"+ "chance: " + str(self.chance)+"\n"+ "mana: " + str(self.mana)+"\n"+ "vie: " + str(self.vie)+"\n"+ "stock: " + str(len(self.stock))+"\n"
 
 if __name__ == "__main__":
-    test = Personnage('Mike', 1, 'France', 1)
+    test = Personnage('Nelson', 1, 'France', 1)
     print(test)
     test.liste_inventaire_du_stock()
