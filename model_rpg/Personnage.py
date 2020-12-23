@@ -3,7 +3,7 @@
 
 from math import floor
 from random import randint
-from utils import TYPE_ETHNIE
+from utils.const import TYPE_ETHNIE
 
 """ Class Personnage """
 
