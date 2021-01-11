@@ -8,8 +8,8 @@ Type de mob:
         - Zombie
         - Griffon
     - Boss: (9/100)
-        - Titan
-        - Dragon
-        - Anaconda
+        - Titan -> Excalibure
+        - Dragon -> Emeraude du chaos
+        - Anaconda -> Tri-Force
     - Big Boss:(1/100)
-        - Roi Nelson # 1000
+        - Mike Nelson # 1000
